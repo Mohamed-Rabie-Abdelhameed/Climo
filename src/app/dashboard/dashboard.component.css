@@ -1,0 +1,56 @@
+.row {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 100vh;
+}
+
+.col-md-4 {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.col-md-8 {
+  border: 1px solid #ccc;
+}
+
+#search-icon {
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+#logo {
+  width: 23%;
+}
+
+#bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group {
+  width: 70%;
+  margin: 0;
+  border: 1px solid #ccc;
+  background-color: #F6F6F7;
+  border-radius: 25px;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 5px #ffb52d;
+  }
+
+.form-control {
+  border: none;
+  border-radius: 25px;
+  background-color: #F6F6F7;
+  padding: 10px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
