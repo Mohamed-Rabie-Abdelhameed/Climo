@@ -1,5 +1,5 @@
 <div class="row col-md-12">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div id="bar">
       <img id="logo" src="assets/images/logo.svg" alt="" />
       <div class="input-group">
@@ -9,14 +9,36 @@
           placeholder="Search for a place..."
         />
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
+          <button id="search-button" type="button">
             <img id="search-icon" src="assets/images/search.png" alt="" />
           </button>
         </span>
       </div>
     </div>
+    <div id="weather-icon">
+      <img src="assets/images/icons/{{ weatherData.weatherCode }}.png" />
+    </div>
+    <div id="weather-info">
+      <h1>{{ weatherData.temperature }}°</h1>
+      <h2>{{ formatDateTime(weatherData.time) }}</h2>
+    </div>
+    <div id="line"></div>
+    <div id="weather-status">
+      <div>
+        <img src="assets/images/icons/{{ weatherData.weatherCode }}.png" />
+        <h1>{{ weatherData.weatherCondition }}</h1>
+      </div>
+      <div>
+        <img src="assets/images/icons/heavy-rain.png" />
+        <h1>Rain {{ weatherData.precipitationProbability }}%</h1>
+      </div>
+    </div>
+    <div id="location">
+      <img src="assets/images/city.jpg" alt="" />
+      <h1>{{ weatherData.name }}</h1>
+    </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <h1>right panel</h1>
   </div>
 </div>

@@ -2,6 +2,7 @@ export class Weather{
     time!: string;
     temperature!: number;
     weatherCode!: number;
+    weatherCondition!: string;
     windSpeed!: number;
     windDirection!: number;
     humidity!: number;
@@ -10,5 +11,4 @@ export class Weather{
     precipitationProbability!: number;
     temperatureApparent!: number;
     name!: string;
-    icon: string = `assets/icons/${this.weatherCode}.png`;
 }
