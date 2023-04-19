@@ -3,6 +3,7 @@ export class Weather{
     temperature!: number;
     weatherCode!: number;
     weatherCondition!: string;
+    cloudCover!: number;
     windSpeed!: number;
     windDirection!: number;
     humidity!: number;
@@ -11,4 +12,5 @@ export class Weather{
     precipitationProbability!: number;
     temperatureApparent!: number;
     name!: string;
+    animate!: boolean;
 }

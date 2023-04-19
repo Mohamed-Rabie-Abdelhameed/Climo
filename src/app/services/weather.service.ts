@@ -45,6 +45,7 @@ export class WeatherService {
           temperature: Math.floor(data.data.values.temperature),
           weatherCode: data.data.values.weatherCode,
           weatherCondition: this.weatherConditions[data.data.values.weatherCode],
+          cloudCover: data.data.values.cloudCover,
           windSpeed: data.data.values.windSpeed,
           windDirection: data.data.values.windDirection,
           humidity: data.data.values.humidity,
@@ -53,6 +54,7 @@ export class WeatherService {
           precipitationProbability: data.data.values.precipitationProbability,
           temperatureApparent: data.data.values.temperatureApparent,
           name: data.location.name,
+          animate: true,
         };
         console.log(weatherData);
         return weatherData;
@@ -71,6 +73,35 @@ export class WeatherService {
           reject(error);
         }
       );
+    });
+  }
+
+  getForecast(location: string): Promise<Weather[]> {
+    const url = `https://api.tomorrow.io/v4/weather/forecast?location=${location}&timesteps=daily&apikey=yaISiiqGsZtCmhEQTnshOaTvGPXHjztJ`;
+    return fetch(url).then((response) => response.json()).then((data) => {
+      console.log(data);
+      const forecastData: Weather[] = [];
+      for (let i = 0; i < data.timelines.daily.length; i++) {
+        const weatherData: Weather = {
+          time: data.timelines.daily[i].time,
+          temperature: Math.floor(data.timelines.daily[i].values.temperatureAvg),
+          weatherCode: data.timelines.daily[i].values.weatherCodeMax,
+          weatherCondition: this.weatherConditions[data.timelines.daily[i].values.weatherCodeMax],
+          cloudCover: data.timelines.daily[i].values.cloudCoverAvg,
+          windSpeed: data.timelines.daily[i].values.windSpeedAvg,
+          windDirection: data.timelines.daily[i].values.windDirectionAvg,
+          humidity: data.timelines.daily[i].values.humidityAvg,
+          uvIndex: data.timelines.daily[i].values.uvIndexAvg,
+          visibility: data.timelines.daily[i].values.visibilityAvg,
+          precipitationProbability: data.timelines.daily[i].values.precipitationProbabilityAvg,
+          temperatureApparent: data.timelines.daily[i].values.temperatureApparentAvg,
+          name: data.location.name,
+          animate: true,
+        };
+        forecastData.push(weatherData);
+      }
+      console.log(forecastData);
+      return forecastData;
     });
   }
 }

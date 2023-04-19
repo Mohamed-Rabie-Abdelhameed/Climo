@@ -4,19 +4,27 @@
       <img id="logo" src="assets/images/logo.svg" alt="" />
       <div class="input-group">
         <input
+          #searchInput
           type="text"
           class="form-control"
           placeholder="Search for a place..."
         />
         <span class="input-group-btn">
-          <button id="search-button" type="button">
+          <button id="search-button" (click)="onSearch()" type="button">
             <img id="search-icon" src="assets/images/search.png" alt="" />
           </button>
         </span>
       </div>
     </div>
     <div id="weather-icon">
-      <img src="assets/images/icons/{{ weatherData.weatherCode }}.png" />
+      <img
+        [ngClass]="{
+          animate__animated: weatherData.animate,
+          animate__slideInLeft: weatherData.animate,
+          animate__slower: weatherData.animate
+        }"
+        src="assets/images/icons/{{ weatherData.weatherCode }}.png"
+      />
     </div>
     <div id="weather-info">
       <h1>{{ weatherData.temperature }}°</h1>
@@ -34,11 +42,79 @@
       </div>
     </div>
     <div id="location">
-      <img src="assets/images/city.jpg" alt="" />
-      <h1>{{ weatherData.name }}</h1>
+      <!-- <img src="assets/images/city.jpg" alt="" /> -->
+      <h1>{{ formatLocation(weatherData.name) }}</h1>
     </div>
   </div>
   <div class="col-md-9">
-    <h1>right panel</h1>
+    <div class="row justify-content-between" id="forecast">
+      <div class="forecast-card col" *ngFor="let forecast of forecastData">
+        <h3>{{ getDayOfWeek(forecast.time) }}</h3>
+        <img src="assets/images/icons/{{ forecast.weatherCode }}.png" />
+        <h3>{{ forecast.temperature }}°</h3>
+      </div>
+    </div>
+    <div id="today">
+      <!-- 2 rows and 3 columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-top">
+                <h5 class="card-title">UV Index</h5>
+                <img src="assets/images/icons/uv.png" alt="">
+            </div>
+              <p class="card-text">
+                {{ weatherData.uvIndex }}
+              </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-top">
+                <h5 class="card-title">Humidity</h5>
+                <img src="assets/images/icons/humidity.png" alt="">
+            </div>
+            <p class="card-text">{{ weatherData.humidity }}%</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-top">
+                <h5 class="card-title">Visibility</h5>
+                <img src="assets/images/icons/eye.png" alt="">
+            </div>
+              <p class="card-text">{{ weatherData.visibility }} km</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-top">
+                <h5 class="card-title">Wind Speed</h5>
+                <img src="assets/images/icons/wind.png" alt="">
+            </div>
+              <p class="card-text">{{ weatherData.windSpeed }} km/h</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+              <div class="card-top">
+                  <h5 class="card-title">Wind Direction</h5>
+                  <img src="assets/images/icons/direction.png" alt="">
+              </div>
+                <p class="card-text">{{ weatherData.visibility }} km</p>
+            </div>
+          </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-top">
+                <h5 class="card-title">Cloud Cover</h5>
+                <img src="assets/images/icons/cloud.png" alt="">
+            </div>
+              <p class="card-text">{{ weatherData.humidity }}%</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
   </div>
 </div>
