@@ -119,8 +119,8 @@ export class DashboardComponent implements OnInit {
   async ngOnInit() {
     this.isSmall = this.isSmallScreen;
     this.loc = await this.API.getUserLocation();
-    // this.forecastData = await this.API.getForecast(this.loc);
-    // this.weatherData = await this.API.getWeather(await this.loc);
+    this.forecastData = await this.API.getForecast(this.loc);
+    this.weatherData = await this.API.getWeather(await this.loc);
   }
 
   formatDateTime(dateTimeString: string): string {
