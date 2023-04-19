@@ -27,7 +27,3 @@ Climo was built using the following technologies:
 ## Contributing
 
 If you would like to contribute to Climo, you can fork the repository and submit a pull request. 
-
-## License
-
-Climo is licensed under the MIT License. Feel free to use it for your own projects!
