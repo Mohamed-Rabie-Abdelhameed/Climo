@@ -119,10 +119,8 @@ export class DashboardComponent implements OnInit {
   async ngOnInit() {
     this.isSmall = this.isSmallScreen;
     this.loc = await this.API.getUserLocation();
-    console.log(this.loc);
-    this.forecastData = await this.API.getForecast(this.loc);
-    console.log(this.forecastData);
-    this.weatherData = await this.API.getWeather(await this.loc);
+    // this.forecastData = await this.API.getForecast(this.loc);
+    // this.weatherData = await this.API.getWeather(await this.loc);
   }
 
   formatDateTime(dateTimeString: string): string {
@@ -182,11 +180,10 @@ export class DashboardComponent implements OnInit {
     this.weatherData.animate = false;
     this.weatherData = await this.API.getWeather(location);
     this.weatherData.animate = true;
-    console.log(this.weatherData);
     this.forecastData = await this.API.getForecast(location);
   }
 
   get isSmallScreen(): boolean {
-    return window.innerWidth < 768;
+    return window.innerWidth < 900;
   }
 }
