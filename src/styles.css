@@ -1,41 +1,41 @@
-@import '~animate.css/animate.min';
+@import "~animate.css/animate.min";
 
 @font-face {
-    font-family: 'Poppins';
-    src: url("assets/fonts/Poppins-Black.ttf");
-    font-weight: 900;
-    src: url("assets/fonts/Poppins-BlackItalic.ttf");
-    font-weight: 900;
-    src: url("assets/fonts/Poppins-Bold.ttf");
-    font-weight: 700;
-    src: url("assets/fonts/Poppins-BoldItalic.ttf");
-    font-weight: 700;
-    src: url("assets/fonts/Poppins-ExtraBold.ttf");
-    font-weight: 800;
-    src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf");
-    font-weight: 800;
-    src: url("assets/fonts/Poppins-ExtraLight.ttf");
-    font-weight: 200;
-    src: url("assets/fonts/Poppins-ExtraLightItalic.ttf");
-    font-weight: 200;
-    src: url("assets/fonts/Poppins-Italic.ttf");
-    font-weight: 400;
-    src: url("assets/fonts/Poppins-Light.ttf");
-    font-weight: 300;
-    src: url("assets/fonts/Poppins-LightItalic.ttf");
-    font-weight: 300;
-    src: url("assets/fonts/Poppins-Medium.ttf");
-    font-weight: 500;
-    src: url("assets/fonts/Poppins-MediumItalic.ttf");
-    font-weight: 500;
-    src: url("assets/fonts/Poppins-Regular.ttf");
-    font-weight: 400;
-    src: url("assets/fonts/Poppins-SemiBold.ttf");
-    font-weight: 600;
-    src: url("assets/fonts/Poppins-SemiBoldItalic.ttf");
-    font-weight: 600;
-    src: url("assets/fonts/Poppins-Thin.ttf");
-    font-weight: 100;
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Black.ttf");
+  font-weight: 900;
+  src: url("assets/fonts/Poppins-BlackItalic.ttf");
+  font-weight: 900;
+  src: url("assets/fonts/Poppins-Bold.ttf");
+  font-weight: 700;
+  src: url("assets/fonts/Poppins-BoldItalic.ttf");
+  font-weight: 700;
+  src: url("assets/fonts/Poppins-ExtraBold.ttf");
+  font-weight: 800;
+  src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf");
+  font-weight: 800;
+  src: url("assets/fonts/Poppins-ExtraLight.ttf");
+  font-weight: 200;
+  src: url("assets/fonts/Poppins-ExtraLightItalic.ttf");
+  font-weight: 200;
+  src: url("assets/fonts/Poppins-Italic.ttf");
+  font-weight: 400;
+  src: url("assets/fonts/Poppins-Light.ttf");
+  font-weight: 300;
+  src: url("assets/fonts/Poppins-LightItalic.ttf");
+  font-weight: 300;
+  src: url("assets/fonts/Poppins-Medium.ttf");
+  font-weight: 500;
+  src: url("assets/fonts/Poppins-MediumItalic.ttf");
+  font-weight: 500;
+  src: url("assets/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+  src: url("assets/fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+  src: url("assets/fonts/Poppins-SemiBoldItalic.ttf");
+  font-weight: 600;
+  src: url("assets/fonts/Poppins-Thin.ttf");
+  font-weight: 100;
 }
 
 html,
@@ -45,10 +45,10 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-*{
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
+* {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 }

@@ -41,38 +41,40 @@
         <h1>Rain {{ weatherData.precipitationProbability }}%</h1>
       </div>
     </div>
+    <div id="line"></div>
     <div id="location">
-      <!-- <img src="assets/images/city.jpg" alt="" /> -->
       <h1>{{ formatLocation(weatherData.name) }}</h1>
     </div>
   </div>
   <div class="col-md-9">
     <div class="row justify-content-between" id="forecast">
+      <h2>This Week</h2>
       <div class="forecast-card col" *ngFor="let forecast of forecastData">
         <h3>{{ getDayOfWeek(forecast.time) }}</h3>
         <img src="assets/images/icons/{{ forecast.weatherCode }}.png" />
         <h3>{{ forecast.temperature }}°</h3>
       </div>
     </div>
+    <div *ngIf="isSmall" id="line"></div>
     <div id="today">
-      <!-- 2 rows and 3 columns -->
       <div class="row">
+        <h2>Today's Highlights</h2>
         <div class="col-md-4">
           <div class="card">
             <div class="card-top">
-                <h5 class="card-title">UV Index</h5>
-                <img src="assets/images/icons/uv.png" alt="">
+              <h5 class="card-title">UV Index</h5>
+              <img src="assets/images/icons/uv.png" alt="" />
             </div>
-              <p class="card-text">
-                {{ weatherData.uvIndex }}
-              </p>
+            <p class="card-text">
+              {{ weatherData.uvIndex }}
+            </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card">
             <div class="card-top">
-                <h5 class="card-title">Humidity</h5>
-                <img src="assets/images/icons/humidity.png" alt="">
+              <h5 class="card-title">Humidity</h5>
+              <img src="assets/images/icons/humidity.png" alt="" />
             </div>
             <p class="card-text">{{ weatherData.humidity }}%</p>
           </div>
@@ -80,40 +82,41 @@
         <div class="col-md-4">
           <div class="card">
             <div class="card-top">
-                <h5 class="card-title">Visibility</h5>
-                <img src="assets/images/icons/eye.png" alt="">
+              <h5 class="card-title">Visibility</h5>
+              <img src="assets/images/icons/eye.png" alt="" />
             </div>
-              <p class="card-text">{{ weatherData.visibility }} km</p>
+            <p class="card-text">{{ weatherData.visibility }} km</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card">
             <div class="card-top">
-                <h5 class="card-title">Wind Speed</h5>
-                <img src="assets/images/icons/wind.png" alt="">
+              <h5 class="card-title">Wind Speed</h5>
+              <img src="assets/images/icons/wind.png" alt="" />
             </div>
-              <p class="card-text">{{ weatherData.windSpeed }} km/h</p>
+            <p class="card-text">{{ weatherData.windSpeed }} km/h</p>
           </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-              <div class="card-top">
-                  <h5 class="card-title">Wind Direction</h5>
-                  <img src="assets/images/icons/direction.png" alt="">
-              </div>
-                <p class="card-text">{{ weatherData.visibility }} km</p>
-            </div>
-          </div>
         <div class="col-md-4">
           <div class="card">
             <div class="card-top">
-                <h5 class="card-title">Cloud Cover</h5>
-                <img src="assets/images/icons/cloud.png" alt="">
+              <h5 class="card-title">Wind Direction</h5>
+              <img src="assets/images/icons/direction.png" alt="" />
             </div>
-              <p class="card-text">{{ weatherData.humidity }}%</p>
+            <p class="card-text">
+              {{ getWindDirection(weatherData.windDirection) }}
+            </p>
           </div>
         </div>
-  
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-top">
+              <h5 class="card-title">Cloud Cover</h5>
+              <img src="assets/images/icons/cloud.png" alt="" />
+            </div>
+            <p class="card-text">{{ weatherData.cloudCover }}%</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
